@@ -76,3 +76,6 @@ for (let j = 0; j < boughtItems.length; j++) {
     document.getElementById('cart-count').textContent = Number(document.getElementById('cart-count').textContent) + 1;
     searchableProdList[boughtItems[j]].shadowRoot.childNodes[0].childNodes[3].setAttribute('onclick', "alert('Removed from Cart!')");
 }
+
+storage.removeItem('boughtItems');
+storage.setItem('boughtItems', boughtItems);
