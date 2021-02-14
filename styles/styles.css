@@ -61,7 +61,7 @@ nav {
   background-color: white;
   border-radius: 5px;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   'image'
   'title'
   'price'
