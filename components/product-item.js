@@ -106,7 +106,6 @@ class ProductItem extends HTMLElement {
       `;
     // attach the created elements to the shadow DOM
     // this.shadowRoot.append(style,wrapper);
-    console.log(style.isConnected);
     shadow.appendChild(product);
     shadow.appendChild(style);
   }
