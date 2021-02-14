@@ -43,10 +43,10 @@ for (let i = 0; i < prods.length; i++) {
   item.shadowRoot.childNodes[0].childNodes[3].addEventListener('click', (e) => {
     if (item.shadowRoot.childNodes[0].childNodes[3].textContent == "Add to Cart") {
       boughtItems.push(prods[i]['id']);
-      storage.setItem('boughtItems', boughtItems);
       item.shadowRoot.childNodes[0].childNodes[3].textContent = "Remove from Cart";
       item.shadowRoot.childNodes[0].childNodes[3].setAttribute('onclick', "alert('Removed from Cart!')");
       document.getElementById('cart-count').textContent = Number(document.getElementById('cart-count').textContent) + 1;
+      storage.setItem('boughtItems', boughtItems);
     }
     else if (item.shadowRoot.childNodes[0].childNodes[3].textContent == "Remove from Cart") {
       // get index of this item, splice it out
@@ -55,11 +55,11 @@ for (let i = 0; i < prods.length; i++) {
         boughtItems.splice(idx, 1);
       }
       // update localStorage
-      storage.setItem('boughtItems', boughtItems);
       // change add to cart button
       item.shadowRoot.childNodes[0].childNodes[3].textContent = "Add to Cart";
       item.shadowRoot.childNodes[0].childNodes[3].setAttribute('onclick', "alert('Added to Cart!')");
       document.getElementById('cart-count').textContent = Number(document.getElementById('cart-count').textContent) - 1;
+      storage.setItem('boughtItems', boughtItems);
     }
     // this.textContent = "Remove From Cart";
   });
